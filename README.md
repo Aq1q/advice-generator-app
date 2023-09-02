@@ -51,7 +51,7 @@ Users should be able to:
 - Sass variables
 - JSX
 - [React](https://reactjs.org/) - JS library
-4
+
 ## Author
 
 - Frontend Mentor - [@Aq1q](https://www.frontendmentor.io/profile/Aq1q)
