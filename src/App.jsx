@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 function App() {
@@ -11,21 +11,29 @@ function App() {
 const [isLoading, setIsLoading] = useState(false);
 const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
-      try {
-        const response = await fetch('https://api.adviceslip.com/advice');
-        const json = await response.json();
-        setAdvice(json);
-      } catch {
-        setIsError(true);
+  const handleClick = async () => {
+    setIsError(false);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://api.adviceslip.com/advice', 
+      {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
       }
+      const json = await response.json();
+      setAdvice(json);
+    } catch {
+      setIsError(true);
+    } finally {
       setIsLoading(false);
-    };
-    fetchData();
-  }, []);
+    }
+  };
   
   return (
     <>
@@ -35,7 +43,7 @@ const [isError, setIsError] = useState(false);
       ) : (
         <><div>{advice.slip.id}</div><div>&quot;{advice.slip.advice}&quot;</div></>
       )}
-      
+      <button onClick={handleClick}><img src="/src/assets/icon-dice.svg" alt="get Advice" /></button>
     </>
   )
 }
