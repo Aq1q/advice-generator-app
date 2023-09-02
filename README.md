@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Aq1q/advice-generator-app)
-- Live Site URL: [Add live site URL here](https://aq1q.github.io/advice-generator-app)
+- Solution URL: [Repo](https://github.com/Aq1q/advice-generator-app)
+- Live Site URL: [App](https://aq1q.github.io/advice-generator-app)
 
 ## My process
 
