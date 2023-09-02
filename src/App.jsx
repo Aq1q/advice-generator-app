@@ -8,7 +8,7 @@ function App() {
       advice: '',
     }
   });
-const [isLoading, setIsLoading] = useState(false);
+const [isLoading, setIsLoading] = useState(true);
 const [isError, setIsError] = useState(false);
 
   const fetchData = async () => {
@@ -44,17 +44,21 @@ const [isError, setIsError] = useState(false);
     fetchData();
   };
   
-  return (
-    <>
+  return <>
+    <div id="container">
       {isError && <div>Someting went wrong...</div>}
-      {isLoading ? (
-        <div>Loading...</div>
+      {!isLoading ? (
+        <>
+          <div className="advice-id">ADVICE #{advice.slip.id}</div>
+          <div className="advice-text">&quot;{advice.slip.advice}&quot;</div>
+        </>
       ) : (
-        <><div>{advice.slip.id}</div><div>&quot;{advice.slip.advice}&quot;</div></>
+        <div>Loading...</div>
       )}
-      <button onClick={handleClick}><img src="/src/assets/icon-dice.svg" alt="get Advice" /></button>
-    </>
-  )
+      <div className="divider"></div>
+      <button className="fetch-button" onClick={handleClick}><img src="/src/assets/icon-dice.svg" alt="get Advice" /></button>
+    </div>
+  </>;
 }
 
 export default App
