@@ -7,7 +7,7 @@ $font-size-quote: 28px;
 #container {
     width: 91.42%;
     max-width: 540px;
-    height: 47.26%;
+    min-height: 47.26%;
     max-height: 332px;
     background-color: $dark-grayish-blue;
     color: $light-cyan;
@@ -30,12 +30,11 @@ $font-size-quote: 28px;
 
 .advice-text {
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 24px;
     width: 295px;
-    height: 125px;
+    min-height: 125px;
 }
 
 .divider {
@@ -57,6 +56,11 @@ $font-size-quote: 28px;
     bottom: -27px;
 }
 
+.fetch-button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 25px $neon-Green;
+}
+
 .loading {
     position: absolute;
     top: 50%;
@@ -67,6 +71,7 @@ $font-size-quote: 28px;
 @media screen and (min-width:1440px) {
     .advice-text {
         width:440px;
+        height: 155px;
     }
     .divider {
         background-image: url('./assets/pattern-divider-desktop.svg');
