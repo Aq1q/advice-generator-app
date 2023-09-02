@@ -46,11 +46,11 @@ const [isError, setIsError] = useState(false);
   };
   
   return <>
-    <div id="container">
+    <div role="main" id="container">
       {isError && <div>Someting went wrong...</div>}
       {!isLoading ? (
         <>
-          <div className="advice-id">ADVICE #{advice.slip.id}</div>
+          <div className="advice-id"><h1>ADVICE #{advice.slip.id}</h1></div>
           <div className="advice-text">&quot;{advice.slip.advice}&quot;</div>
           <div className="divider"></div>
         </>
