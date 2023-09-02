@@ -51,11 +51,12 @@ const [isError, setIsError] = useState(false);
         <>
           <div className="advice-id">ADVICE #{advice.slip.id}</div>
           <div className="advice-text">&quot;{advice.slip.advice}&quot;</div>
+          <div className="divider"></div>
         </>
       ) : (
-        <div>Loading...</div>
+        <div className="loading">Loading...</div>
       )}
-      <div className="divider"></div>
+      
       <button className="fetch-button" onClick={handleClick}><img src="/src/assets/icon-dice.svg" alt="get Advice" /></button>
     </div>
   </>;

@@ -5,7 +5,70 @@ $neon-Green: hsl(150, 100%, 66%);
 $font-size-quote: 28px;
 
 #container {
-    width: 90%;
-    height: 315px;
+    width: 91.42%;
+    max-width: 540px;
+    height: 47.26%;
+    max-height: 332px;
     background-color: $dark-grayish-blue;
+    color: $light-cyan;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.advice-id{
+    text-align: center;
+    color: $neon-Green;
+    font-size: 12px;
+    margin-top: 43px;
+    margin-bottom: 30px;
+}
+
+.advice-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    width: 295px;
+    height: 125px;
+}
+
+.divider {
+    width: 100%;
+    height: 16px;
+    margin-top: 30px;
+    background-image: url('./assets/pattern-divider-mobile.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fetch-button {
+    width: 54px;
+    height: 54px;
+    border-radius: 100%;
+    border: none;
+    background-color: $neon-Green;
+    position: absolute;
+    bottom: -27px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    font-size: 24px;
+}
+
+@media screen and (min-width:1440px) {
+    .advice-text {
+        width:440px;
+    }
+    .divider {
+        background-image: url('./assets/pattern-divider-desktop.svg');
+    }
 }
