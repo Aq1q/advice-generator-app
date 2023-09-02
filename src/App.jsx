@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import './App.scss'
 
 function App() {
   const [advice, setAdvice] = useState({
