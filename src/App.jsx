@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import './App.scss'
+import './assets/icon-dice.svg'
 
 function App() {
   const [advice, setAdvice] = useState({
@@ -57,7 +58,7 @@ const [isError, setIsError] = useState(false);
         <div className="loading">Loading...</div>
       )}
       
-      <button className="fetch-button" onClick={handleClick}><img src="assets/icon-dice.svg" alt="get Advice" /></button>
+      <button className="fetch-button" onClick={handleClick}><img src="./assets/icon-dice.svg" alt="get Advice" /></button>
     </div>
   </>;
 }
