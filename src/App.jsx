@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 const [isLoading, setIsLoading] = useState(false);
 const [isError, setIsError] = useState(false);
 
-  const handleClick = async () => {
+  const fetchData = async () => {
     setIsError(false);
     setIsLoading(true);
 
@@ -33,6 +33,15 @@ const [isError, setIsError] = useState(false);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+  const handleClick = () => {
+    fetchData();
   };
   
   return (
